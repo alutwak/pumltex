@@ -1,0 +1,34 @@
+\documentclass{article}
+
+\usepackage{puml}
+
+\begin{document}
+\begin{figure}\centering
+  
+\begin{pumlpicture}{test}{0.5\textwidth}
+  @startuml
+  start
+  :create pumlpicture environment;
+  :write plantuml diagram markup code;
+  :compile LaTeX file;
+  :export plantuml code to temp file;
+  :run plantuml program on temp file;
+  :incudegraphics of generated UML image;
+  :continue editing;
+  :compile;
+  if (pumlpicture code changed?) then (yes)
+  :regenerate UML image;
+  else (no)
+  endif
+  stop
+  @enduml
+\end{pumlpicture}
+
+\caption{PlantUML Picture}
+\label{fig:puml-pic}
+\end{figure}
+\end{document}
+
+% Local Variables:
+% TeX-command-extra-options: "-shell-escape"
+% End:
